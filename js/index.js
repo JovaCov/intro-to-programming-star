@@ -14,3 +14,43 @@ for (let i = 0; i < skills.length; i++){
     skill.innerHTML = skills[i];
     skillsList.appendChild(skill);
 } 
+
+const messageform = document.querySelector('form[name="leave_message"]')
+console.log(messageform);
+
+messageform.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nameinput = messageform.querySelector('input[name="name"]');
+    const emailinput = messageform.querySelector('input[name="email"]');
+    const messageinput = messageform.querySelector('textarea[name="message"]');
+    console.log(nameinput.value);
+    console.log(emailinput.value);
+    console.log(messageinput.value);
+    
+    const messageSection = document.querySelector('#message');
+    let messagelist = messageSection.querySelector('ul');
+    let newMessage = document.createElement('li');
+    const a = document.createElement('a');
+    a.innerHTML = nameinput.value;
+    a.href = "mailto:" + emailinput.value;
+    console.log(a);
+    const messagetext = document.createElement('span');
+    messagetext.innerHTML = " wrote: " + messageinput.value;
+    console.log(messagetext);
+    newMessage.appendChild(a);
+    newMessage.appendChild(messagetext);
+    console.log(newMessage);
+    
+    const removeButton = document.createElement('button');
+    removeButton.innerText = 'remove';
+    removeButton.type = 'button';
+
+    removeButton.addEventListener('click', (e) => {
+        const entry = e.target.parentNode;
+        entry.remove();
+    })
+    newMessage.appendChild(removeButton);
+    messagelist.appendChild(newMessage);
+
+    messageform.reset();
+});
