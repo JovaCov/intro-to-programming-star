@@ -1,0 +1,51 @@
+html {
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+    background-color: #222831;
+    color: #c9d1d9;
+
+}
+div, h1 {
+    
+    padding: 1rem 0;
+    margin: 0 auto;
+    max-width: 1024px;
+    width: 90vw;
+}
+h1 {
+    text-align: end;
+    color: #00FFF5;
+}
+h2 {
+    color: #00FFF5;
+    font-style: italic;
+}
+section {
+    padding: 1.5rem 0;
+    background-color: #393E46;
+    margin: 1.5rem;
+}
+.xps {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    border: 2px solid #00FFF5;
+    border-radius: 12px;
+}
+.input_field {
+    display: grid;
+    max-width: fit-content;
+    padding-top: 0%;
+    
+}
+#message ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns:1fr 1fr; 
+    grid-template-rows: 1fr 1fr;
+
+}
